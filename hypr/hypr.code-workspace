@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../waybar"
+		},
+		{
+			"path": "../hyde"
+		},
+		{
+			"path": "../../.local/share/bin"
+		}
+	],
+	"settings": {}
+}

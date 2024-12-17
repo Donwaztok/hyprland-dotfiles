@@ -1,0 +1,9 @@
+# Ignora tudo
+*
+
+# Excetua as pastas desejadas
+!hypr/
+!waybar/
+
+# Opcionalmente, se quiser garantir que o próprio .gitignore não seja ignorado
+!.gitignore
