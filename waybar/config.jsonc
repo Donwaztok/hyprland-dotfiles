@@ -34,12 +34,12 @@
         "custom/l_end",
         "backlight",
         "pulseaudio",
-        "pulseaudio#microphone",
+        // "pulseaudio#microphone",
         "tray",
         "battery",
-        "custom/keybindhint",
-        "custom/cliphist",
-        "custom/power",
+        // "custom/keybindhint",
+        // "custom/cliphist",
+        // "custom/power",
         "custom/r_end",
         "custom/padd"
     ],
@@ -149,7 +149,7 @@
         "scroll-step": 5
     },
     "tray": {
-        "icon-size": 18,
+        "icon-size": 11,
         "rotate": 0,
         "spacing": 5
     },
