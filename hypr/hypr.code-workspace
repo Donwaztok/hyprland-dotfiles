@@ -7,10 +7,13 @@
 			"path": "../waybar"
 		},
 		{
-			"path": "../hyde"
+			"path": "../swaync"
 		},
 		{
-			"path": "../../.local/share/bin"
+			"path": "../rofi"
+		},
+		{
+			"path": "../kitty"
 		}
 	],
 	"settings": {}

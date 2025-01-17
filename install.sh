@@ -1,9 +1,33 @@
 #!/bin/bash
 
+if [ -f /etc/pacman.conf ] && [ ! -f /etc/pacman.conf.t2.bkp ]; then
+    echo -e "\033[0;32m[PACMAN]\033[0m adding extra spice to pacman..."
+
+    sudo cp /etc/pacman.conf /etc/pacman.conf.t2.bkp
+    sudo sed -i "/^#Color/c\Color\nILoveCandy
+    /^#VerbosePkgLists/c\VerbosePkgLists
+    /^#ParallelDownloads/c\ParallelDownloads = 5" /etc/pacman.conf
+    sudo sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
+
+    sudo pacman -S reflector
+    sudo reflector \
+        --country Brazil,United_States \
+        --protocol https \
+        --sort rate \
+        --save /etc/pacman.d/mirrorlist
+    sudo pacman -Rns reflector
+
+    sudo pacman -Syyu
+    sudo pacman -Fy
+
+else
+    echo -e "\033[0;33m[SKIP]\033[0m pacman is already configured..."
+fi
+
 # Verifica se yay está instalado
 if ! command -v yay &> /dev/null; then
     echo "O 'yay' não está instalado. Instalando agora..."
-    
+
     # Instala as dependências necessárias e o yay
     sudo pacman -S --needed git base-devel
     git clone https://aur.archlinux.org/yay.git
@@ -17,35 +41,24 @@ fi
 
 yay --noconfirm -S $(awk '!/^#/ { print $1 }' app.lst)
 
-# set variables
-Zsh_rc="${ZDOTDIR:-$HOME}/.zshrc"
-Zsh_Path="/usr/share/oh-my-zsh"
-Zsh_Plugins="$Zsh_Path/custom/plugins"
-Fix_Completion=""
+# install rofi theme
+DEST_DIR="$HOME/.local/share/rofi/themes/"
+mkdir -p "$DEST_DIR"
+FILE_URL="https://github.com/newmanls/rofi-themes-collection/raw/refs/heads/master/themes/spotlight-dark.rasi"
+FILE_NAME="spotlight-dark.rasi"
+curl -L "$FILE_URL" -o "${DEST_DIR}${FILE_NAME}"
 
-# generate plugins from list
-while read r_plugin; do
-    z_plugin=$(echo "${r_plugin}" | awk -F '/' '{print $NF}')
-    if [ "${r_plugin:0:4}" == "http" ] && [ ! -d "${Zsh_Plugins}/${z_plugin}" ]; then
-        sudo git clone "${r_plugin}" "${Zsh_Plugins}/${z_plugin}"
-    fi
-    if [ "${z_plugin}" == "zsh-completions" ] && [ "$(grep 'fpath+=.*plugins/zsh-completions/src' "${Zsh_rc}" | wc -l)" -eq 0 ]; then
-        Fix_Completion='\nfpath+=${ZSH_CUSTOM:-${ZSH:-/usr/share/oh-my-zsh}/custom}/plugins/zsh-completions/src'
-    else
-        [ -z "${z_plugin}" ] || w_plugin+=" ${z_plugin}"
-    fi
-done < <(cut -d '#' -f 1 "${scrDir}/restore_zsh.lst" | sed 's/ //g')
+curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+sudo usermod --shell $(which zsh) $USER
+sudo chsh -s $(which zsh) $USER
 
-# update plugin array in zshrc
-echo -e "\033[0;32m[SHELL]\033[0m installing plugins (${w_plugin} )"
-sed -i "/^plugins=/c\plugins=(${w_plugin} )${Fix_Completion}" "${Zsh_rc}"
+source ~/.zshrc
+source "$HOME/.oh-my-zsh/oh-my-zsh.sh"
+export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
-# set shell
-if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "${myShell}" ]]; then
-    echo -e "\033[0;32m[SHELL]\033[0m changing shell to ${myShell}..."
-    chsh -s "$(which "${myShell}")"
-else
-    echo -e "\033[0;33m[SKIP]\033[0m ${myShell} is already set as shell..."
-fi
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 echo "Instalação Concluída"

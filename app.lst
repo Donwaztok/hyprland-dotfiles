@@ -15,6 +15,7 @@ bluez-utils                                            # bluetooth utility cli
 blueman                                                # bluetooth manager gui
 brightnessctl                                          # screen brightness control
 udiskie                                                # manage removable media
+btop                                                   # resource manager
 
 # --------------------------------------------------- // Display Manager
 sddm                                                   # display manager for KDE plasma
@@ -24,10 +25,10 @@ qt5-graphicaleffects                                   # for sddm theme effects
 
 # --------------------------------------------------- // Window Manager
 hyprland                                               # wlroots-based wayland compositor
-#dunst                                                  # notification daemon
-#rofi-wayland                                           # application launcher
+swaync                                                 # notification daemon
+rofi-wayland                                           # application launcher
 waybar                                                 # system bar
-#swww                                                   # wallpaper
+hyprpaper                                              # wallpaper
 #swaylock-effects-git                                   # lock screen
 #wlogout                                                # logout menu
 #grimblast-git                                          # screenshot tool
@@ -69,7 +70,20 @@ visual-studio-code-bin                                 # ide text editor
 # --------------------------------------------------- // Shell
 zsh                                                    # zsh
 eza                                                    # file lister for zsh
-oh-my-zsh-git                                          # plugin manager for zsh
-zsh-theme-powerlevel10k-git                            # theme for zsh
+fzf                                                    # fuzzy finder
+#oh-my-zsh-git                                         # plugin manager for zsh
+#zsh-theme-powerlevel10k                               # theme for zsh
 fastfetch                                              # system information fetch tool
 pokemon-colorscripts-git                               # display pokemon sprites
+#zsh-autocomplete                                      # press tab to complete command
+#zsh-syntax-highlighting-git                           # highlights commands as you type
+#zsh-autosuggestions-git                               # suggests commands as you type based on history
+
+# --------------------------------------------------- // Themes and Fonts
+ttf-cascadia-code-nerd                                 # font
+ttf-firacode-nerd                                      # font
+ttf-firacode                                           # font
+cantarell-fonts                                        # font
+bibata-cursor-theme-bin                                # mouse cursor
+graphite-gtk-theme-black-rimless-normal-compact-git    # gtk theme
+tela-circle-icon-theme-black-git                       # icon theme

@@ -26,9 +26,9 @@ tooltip {
     text-shadow: none;
     padding: 0;
     min-width: 10px;
-    min-height: 10px;
+    min-height: 8px;
     border-radius: 12px;
-    margin: 5px 2px;
+    margin: 5px 2px 5px 0px;
     background: @wb-hvr-fg;
     color: transparent;
     transition: all 0.3s ease;
@@ -131,6 +131,11 @@ tooltip {
     margin: 5px 0px 5px 0px;
     padding-left: 6px;
     padding-right: 6px;
+}
+
+#clock,
+#tray {
+    padding-top: 2px;
 }
 
 #workspaces {
