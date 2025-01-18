@@ -11,6 +11,8 @@
 !rofi/*
 !kitty/
 !kitty/*
+!wlogout/
+!wlogout/*
 
 # Opcionalmente, se quiser garantir que o próprio .gitignore não seja ignorado
 !.gitignore
@@ -19,3 +21,4 @@
 !README.md
 !install.sh
 !restore_zsh.lst
+!.zshrc

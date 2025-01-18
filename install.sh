@@ -52,6 +52,7 @@ curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools
 sudo usermod --shell $(which zsh) $USER
 sudo chsh -s $(which zsh) $USER
 
+cp .zshrc ~/.zshrc
 source ~/.zshrc
 source "$HOME/.oh-my-zsh/oh-my-zsh.sh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"

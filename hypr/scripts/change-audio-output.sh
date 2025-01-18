@@ -29,16 +29,16 @@ CURRENT_DEVICE=$(wpctl status | grep -A 2 "Sinks:" | grep '\*' | sed -E 's/[^0-9
 if [[ "$CURRENT_DEVICE" == "$DEVICE_CREATIVE" ]]; then
     NEW_DEVICE="$DEVICE_HYPERX"
     NEW_VOLUME="$VOLUME_HYPERX"
-    echo "Alternando para $DEVICE_NAME_HYPERX ... Volume: $NEW_VOLUME"
+    notify-send "$DEVICE_NAME_HYPERX | v $NEW_VOLUME"
 elif [[ "$CURRENT_DEVICE" == "$DEVICE_HYPERX" ]]; then
     NEW_DEVICE="$DEVICE_CREATIVE"
     NEW_VOLUME="$VOLUME_CREATIVE"
-    echo "Alternando para $DEVICE_NAME_CREATIVE ... Volume: $NEW_VOLUME"
+    notify-send "$DEVICE_NAME_CREATIVE | v $NEW_VOLUME"
 else
     # Caso o dispositivo atual não seja reconhecido, define o Creative como padrão
     NEW_DEVICE="$DEVICE_CREATIVE"
     NEW_VOLUME="$VOLUME_CREATIVE"
-    echo "Dispositivo atual não reconhecido. Definindo saída para $DEVICE_NAME_CREATIVE como padrão..."
+    notify-send "Dispositivo atual não reconhecido. \nDefinindo saída para $DEVICE_NAME_CREATIVE como padrão..."
 fi
 
 # Alterar o dispositivo de saída padrão

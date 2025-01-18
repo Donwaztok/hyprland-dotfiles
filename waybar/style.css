@@ -28,7 +28,7 @@ tooltip {
     min-width: 10px;
     min-height: 8px;
     border-radius: 12px;
-    margin: 5px 2px 5px 0px;
+    margin: 4px 2px 4px 0px;
     background: @wb-hvr-fg;
     color: transparent;
     transition: all 0.3s ease;
@@ -134,7 +134,7 @@ tooltip {
 }
 
 #clock,
-#tray {
+#pulseaudio {
     padding-top: 2px;
 }
 
