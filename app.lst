@@ -75,8 +75,10 @@ ttf-cascadia-code-nerd                                 # font
 ttf-firacode-nerd                                      # font
 ttf-firacode                                           # font
 cantarell-fonts                                        # font
-noto-fonts                                             # font
-noto-fonts-emoji                                       # font emoji
+noto-fonts                                             # Google Noto TTF fonts
+noto-fonts-cjk                                         # Google Noto CJK fonts
+noto-fonts-emoji                                       # Google Noto emoji fonts
+noto-fonts-extra                                       # Google Noto TTF fonts - additional variants
 bibata-cursor-theme-bin                                # mouse cursor
 graphite-gtk-theme-black-rimless-normal-compact-git    # gtk theme
 tela-circle-icon-theme-black-git                       # icon theme
