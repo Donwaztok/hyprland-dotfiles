@@ -48,6 +48,7 @@ FILE_URL="https://github.com/newmanls/rofi-themes-collection/raw/refs/heads/mast
 FILE_NAME="spotlight-dark.rasi"
 curl -L "$FILE_URL" -o "${DEST_DIR}${FILE_NAME}"
 
+# Install Oh My Zsh
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 sudo usermod --shell $(which zsh) $USER
 sudo chsh -s $(which zsh) $USER
@@ -57,9 +58,27 @@ source ~/.zshrc
 source "$HOME/.oh-my-zsh/oh-my-zsh.sh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
+# install zsh plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# install sddm theme
+if [ ! -d /etc/sddm.conf.d ]; then
+    sudo mkdir -p /etc/sddm.conf.d
+fi
+sudo tar -xzf hypr/source/Sddm_Candy.tar.gz -C /usr/share/sddm/themes/
+sudo touch /etc/sddm.conf.d/kde_settings.conf
+sudo cp /etc/sddm.conf.d/kde_settings.conf /etc/sddm.conf.d/kde_settings.t2.bkp
+sudo cp /usr/share/sddm/themes/Candy/kde_settings.conf /etc/sddm.conf.d/
+
+# install refind theme
+if [ ! -d /boot/EFI/refind/themes  ]; then
+    sudo mkdir -p /boot/EFI/refind/themes
+fi
+cd /boot/EFI/refind/themes
+sudo git clone https://github.com/Pr0cella/rEFInd-glassy
+echo "include themes/rEFInd-glassy/theme.conf" | sudo tee -a /boot/EFI/refind/refind.conf
 
 echo "Instalação Concluída"
