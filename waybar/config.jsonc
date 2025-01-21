@@ -114,7 +114,7 @@
     "pulseaudio": {
         "format": "{icon} {volume}",
         "rotate": 0,
-        "format-muted": "婢",
+        "format-muted": "🔇",
         "on-click": "pavucontrol -t 3",
         "on-click-right": "~/.config/hypr/scripts/volumecontrol.sh -s ''",
         "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
