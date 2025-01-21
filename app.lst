@@ -65,10 +65,8 @@ spotify                                                # spotify
 # --------------------------------------------------- // Shell
 zsh                                                    # zsh
 eza                                                    # file lister for zsh
-fzf                                                    # fuzzy finder
-#oh-my-zsh-git                                         # plugin manager for zsh
 fastfetch                                              # system information fetch tool
-pokemon-colorscripts-git                               # display pokemon sprites
+pokeget                                                # display pokemon sprites
 
 # --------------------------------------------------- // Themes and Fonts
 ttf-cascadia-code-nerd                                 # font

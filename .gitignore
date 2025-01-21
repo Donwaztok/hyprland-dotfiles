@@ -13,6 +13,9 @@
 !kitty/*
 !wlogout/
 !wlogout/*
+!fastfetch/
+!fastfetch/*
+!fastfetch/*/*
 
 # Opcionalmente, se quiser garantir que o próprio .gitignore não seja ignorado
 !.gitignore
