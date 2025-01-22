@@ -16,6 +16,8 @@
 !fastfetch/
 !fastfetch/*
 !fastfetch/*/*
+!mako/
+!mako/*
 
 # Opcionalmente, se quiser garantir que o próprio .gitignore não seja ignorado
 !.gitignore

@@ -79,7 +79,7 @@
     "pulseaudio": {
         "format": "{icon} {volume}",
         "format-muted": "🔇",
-        "on-click": "pamixer -t && ~/.config/hypr/scripts/notify-volume",
+        "on-click": "pavucontrol -t 3",
         "on-scroll-up": "pamixer -i 5 && ~/.config/hypr/scripts/notify-volume",
         "on-scroll-down": "pamixer -d 5 && ~/.config/hypr/scripts/notify-volume",
         "tooltip-format": "{icon} {desc} // {volume}%",
