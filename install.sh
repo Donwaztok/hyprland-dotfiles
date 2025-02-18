@@ -39,8 +39,8 @@ else
     echo "'yay' já está instalado!"
 fi
 
-echo '{"cleanAfter": true}' > ~/.config/yay/config.json
-yay --noconfirm -S $(awk '!/^#/ { print $1 }' app.lst)
+# Instala os pacotes do app.lst
+yay --noconfirm --removemake --cleanafter -S $(awk '!/^#/ { print $1 }' app.lst)
 
 # install rofi theme
 DEST_DIR="$HOME/.local/share/rofi/themes/"
