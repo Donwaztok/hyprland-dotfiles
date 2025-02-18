@@ -39,6 +39,7 @@ else
     echo "'yay' já está instalado!"
 fi
 
+echo '{"cleanAfter": true}' > ~/.config/yay/config.json
 yay --noconfirm -S $(awk '!/^#/ { print $1 }' app.lst)
 
 # install rofi theme
