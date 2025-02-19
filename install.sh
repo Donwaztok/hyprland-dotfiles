@@ -40,7 +40,7 @@ else
 fi
 
 # Instala os pacotes do app.lst
-yay --noconfirm --removemake --cleanafter -S $(awk '!/^#/ { print $1 }' app.lst)
+yay --removemake --cleanafter -S $(awk '!/^#/ { print $1 }' app.lst)
 
 # install rofi theme
 DEST_DIR="$HOME/.local/share/rofi/themes/"
@@ -72,13 +72,5 @@ sudo tar -xzf hypr/source/Sddm_Candy.tar.gz -C /usr/share/sddm/themes/
 sudo touch /etc/sddm.conf.d/kde_settings.conf
 sudo cp /etc/sddm.conf.d/kde_settings.conf /etc/sddm.conf.d/kde_settings.t2.bkp
 sudo cp /usr/share/sddm/themes/Candy/kde_settings.conf /etc/sddm.conf.d/
-
-# install refind theme
-if [ ! -d /boot/EFI/refind/themes  ]; then
-    sudo mkdir -p /boot/EFI/refind/themes
-fi
-cd /boot/EFI/refind/themes
-sudo git clone https://github.com/Pr0cella/rEFInd-glassy
-echo "include themes/rEFInd-glassy/theme.conf" | sudo tee -a /boot/EFI/refind/refind.conf
 
 echo "Instalação Concluída"
