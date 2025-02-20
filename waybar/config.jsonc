@@ -2,6 +2,7 @@
 {
     "layer": "top",
     "output": [
+        "DP-2",
         "DP-3"
     ],
     "position": "top",
