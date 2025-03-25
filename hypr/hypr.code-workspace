@@ -10,7 +10,7 @@
 			"path": "../mako"
 		},
 		{
-			"path": "../rofi"
+			"path": "../wofi"
 		},
 		{
 			"path": "../kitty"
