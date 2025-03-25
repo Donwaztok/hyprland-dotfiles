@@ -1,13 +1,13 @@
+@import "theme.css";
+
 * {
     border: none;
     border-radius: 0px;
-    font-family: "FiraCode Nerd Font Mono", "Maple Mono";
+    font-family: "FiraCode Nerd Font Mono";
     /* font-weight: bold; */
     font-size: 10px;
-    min-height: 8px;
+    min-height: 5px;
 }
-
-@import "theme.css";
 
 window#waybar {
     background: @bar-bg;
@@ -20,36 +20,31 @@ tooltip {
     border-width: 0px;
 }
 
-/* Estilo para as workspaces inativas (bolinhas pequenas) */
-#workspaces button {
-    box-shadow: none;
-    text-shadow: none;
-    padding: 0;
-    min-width: 10px;
-    min-height: 8px;
-    border-radius: 12px;
-    margin: 4px 2px 4px 0px;
-    background: @wb-hvr-fg;
-    color: transparent;
-    transition: all 0.3s ease;
+#workspaces {
+    margin: 7px 0px 7px 0px;
 }
 
-/* Estilo para a workspace ativa (barrinha maior) */
-#workspaces button.active {
-    min-width: 40px;
-    min-height: 3px;
-    border-radius: 15px;
-    background: @wb-act-bg;
+#workspaces button {
+    padding: 0;
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 12px;
+    margin: 0px 2px 0px 0px;
+    background: @wb-hvr-fg;
     color: transparent;
     transition: all 0.4s ease;
 }
 
-/* Estilo para hover em qualquer workspace */
-#workspaces button:hover {
+#workspaces button.active {
+    min-width: 40px;
+    min-height: 3px;
+    border-radius: 15px;
     background: @ducke-yellow;
-    transition: all 0.3s ease;
 }
 
+#workspaces button:hover {
+    background: @ducke-yellow;
+}
 
 #taskbar button {
     box-shadow: none;
@@ -128,7 +123,7 @@ tooltip {
     color: @main-fg;
     background: @main-bg-2;
     opacity: 1;
-    margin: 5px 0px 5px 0px;
+    margin: 3px 0px 3px 0px;
     padding-left: 6px;
     padding-right: 6px;
 }
@@ -136,21 +131,6 @@ tooltip {
 #clock,
 #pulseaudio {
     padding-top: 2px;
-}
-
-#workspaces {
-    color: @bar-bg;
-    background: @bar-bg;
-    border-radius: 12px;
-    opacity: 1;
-    margin: 5px 0px 5px 0px;
-    padding-left: 6px;
-    padding-right: 6px;
-}
-
-#workspaces,
-#taskbar {
-    padding: 0px;
 }
 
 #custom-r_end {

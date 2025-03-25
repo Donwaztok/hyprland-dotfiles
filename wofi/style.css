@@ -1,0 +1,37 @@
+* {
+    border-radius: 5px;
+    border: none;
+}
+
+window {
+    font-size: 32px;
+    font-family: "Cantarell", "noto sans", sans-serif;
+    background: rgba(50, 50, 50, 0.95);
+    color: white;
+    border: 1px solid #FFD369;
+}
+
+#entry {
+    padding: 0.25em;
+}
+
+#entry:selected {
+    background-color: #aa862b;
+    background: linear-gradient(90deg, #aa862b, #FFD369);
+}
+
+#text:selected {
+    color: #333333;
+}
+
+#input {
+    background: transparent;
+    color: white;
+    padding: 0.25em;
+    box-shadow: none;
+}
+
+image {
+    margin-left: .25em;
+    margin-right: .25em;
+}

@@ -7,8 +7,8 @@
 !hypr/*/*
 !waybar/
 !waybar/*
-!rofi/
-!rofi/*
+!wofi/
+!wofi/*
 !kitty/
 !kitty/*
 !wlogout/

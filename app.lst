@@ -26,13 +26,12 @@ qt5-graphicaleffects                                   # for sddm theme effects
 # --------------------------------------------------- // Window Manager
 hyprland                                               # wlroots-based wayland compositor
 mako                                                   # notification daemon
-ulauncher                                              # application launcher
 waybar                                                 # system bar
 hyprpaper                                              # wallpaper
 wlogout                                                # logout menu
 hyprshot                                               # screenshot tool
 cliphist                                               # clipboard manager
-rofi-wayland                                           # clipboard visualizer
+wofi                                                   # clipboard visualizer and app launcher
 
 # --------------------------------------------------- // Dependencies
 polkit-gnome                                           # authentication agent

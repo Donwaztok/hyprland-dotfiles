@@ -30,14 +30,14 @@ read -r -d '' prog <<EOF
 /^[0-9]+\s<meta http-equiv=/ { next }
 match(\$0, /^([0-9]+)\s(\[\[\s)?binary.*(jpg|jpeg|png|bmp)/, grp) {
     image = grp[1]"."grp[3]
-    system("[ -f $thumb_dir/"image" ] || echo " grp[1] "\\\\\t | cliphist decode | magick - -resize '256x256>' $thumb_dir/"image )
+    system("[ -f $thumb_dir/"image" ] || echo " grp[1] "\\\\\t | cliphist decode > $thumb_dir/"image )
     print "img:$thumb_dir/"image
     next
 }
 1
 EOF
 
-choice=$(gawk <<< $cliphist_list "$prog" | wofi -I --dmenu -Dimage_size=200 -Dynamic_lines=true)
+choice=$(gawk <<< $cliphist_list "$prog" | cut -f 2- | wofi -I --dmenu -Dimage_size=800 -Dynamic_lines=true)
 
 # stop execution if nothing selected in wofi menu
 [ -z "$choice" ] && exit 1

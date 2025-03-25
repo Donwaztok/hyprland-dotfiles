@@ -7,7 +7,7 @@
     ],
     "position": "top",
     "mod": "dock",
-    "height": 28,
+    "height": 24,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,

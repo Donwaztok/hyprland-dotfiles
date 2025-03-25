@@ -43,13 +43,6 @@ fi
 # Instala os pacotes do app.lst
 yay --removemake --cleanafter -S $(awk '!/^#/ { print $1 }' app.lst)
 
-# install rofi theme
-DEST_DIR="$HOME/.local/share/rofi/themes/"
-mkdir -p "$DEST_DIR"
-FILE_URL="https://github.com/newmanls/rofi-themes-collection/raw/refs/heads/master/themes/spotlight-dark.rasi"
-FILE_NAME="spotlight-dark.rasi"
-curl -L "$FILE_URL" -o "${DEST_DIR}${FILE_NAME}"
-
 # Install Oh My Zsh
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 sudo usermod --shell $(which zsh) $USER
