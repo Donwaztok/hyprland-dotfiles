@@ -57,6 +57,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+# mouse theme on X11
+echo "Xcursor.theme: Bibata-Modern-Classic" >> ~/.Xresources
+echo "Xcursor.size: 20" >> ~/.Xresources
+
 # install sddm theme
 if [ ! -d /etc/sddm.conf.d ]; then
     sudo mkdir -p /etc/sddm.conf.d
