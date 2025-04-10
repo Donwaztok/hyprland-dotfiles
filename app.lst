@@ -58,7 +58,7 @@ kitty                                                  # terminal
 nautilus                                               # gnome file manager
 ark                                                    # kde file archiver
 vim                                                    # terminal text editor
-visual-studio-code-bin                                 # ide text editor
+cursor-bin                                             # ide text editor
 spotify                                                # spotify
 thunderbird                                            # email
 vencord                                                # discord
