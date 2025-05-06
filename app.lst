@@ -32,6 +32,7 @@ wlogout                                                # logout menu
 hyprshot                                               # screenshot tool
 cliphist                                               # clipboard manager
 wofi                                                   # clipboard visualizer and app launcher
+hypridle                                               # idle detection
 
 # --------------------------------------------------- // Dependencies
 polkit-gnome                                           # authentication agent
