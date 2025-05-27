@@ -29,7 +29,7 @@
         "custom/l_end",
         "backlight",
         "pulseaudio",
-        "tray",
+        "group/minimized",
         "battery",
         "custom/r_end",
         "custom/padd"
@@ -110,9 +110,25 @@
         "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
         "scroll-step": 5
     },
+    "custom/expand": {
+        "tooltip": false,
+        "format": "\uf0d9"
+    },
     "tray": {
         "icon-size": 11,
         "spacing": 5
+    },
+    "group/minimized": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/expand",
+            "tray"
+        ],
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "minimized",
+            "transition-left-to-right": false
+        }
     },
     "battery": {
         "states": {
@@ -125,17 +141,11 @@
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": [
-            "󰂎",
-            "󰁺",
-            "󰁻",
-            "󰁼",
-            "󰁽",
-            "󰁾",
-            "󰁿",
-            "󰂀",
-            "󰂁",
-            "󰂂",
-            "󰁹"
+            "",
+            "",
+            "",
+            "",
+            ""
         ]
     },
     "custom/l_end": {
