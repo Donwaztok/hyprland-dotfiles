@@ -70,4 +70,8 @@ sudo touch /etc/sddm.conf.d/kde_settings.conf
 sudo cp /etc/sddm.conf.d/kde_settings.conf /etc/sddm.conf.d/kde_settings.t2.bkp
 sudo cp /usr/share/sddm/themes/Candy/kde_settings.conf /etc/sddm.conf.d/
 
+# enable services
+sudo systemctl enable sddm
+sudo systemctl enable NetworkManager
+
 echo "Instalação Concluída"
