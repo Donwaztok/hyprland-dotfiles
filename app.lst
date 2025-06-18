@@ -45,6 +45,10 @@ jq                                                     # for json processing
 imagemagick                                            # for image processing
 libnotify                                              # for notifications
 
+# --------------------------------------------------- // Gaming
+steam                                                  # gaming platform
+gamemode                                               # daemon and library for game optimizations
+
 # --------------------------------------------------- // Theming
 nwg-look                                               # gtk configuration tool
 qt5ct                                                  # qt5 configuration tool
