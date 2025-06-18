@@ -22,8 +22,6 @@
 # Opcionalmente, se quiser garantir que o próprio .gitignore não seja ignorado
 !.gitignore
 !app.lst
-!install-git.sh
 !README.md
 !install.sh
-!restore_zsh.lst
 !.zshrc
