@@ -45,6 +45,9 @@ jq                                                     # for json processing
 imagemagick                                            # for image processing
 libnotify                                              # for notifications
 
+# --------------------------------------------------- // Nvidia
+nvidia-open-dkms
+
 # --------------------------------------------------- // Gaming
 steam                                                  # gaming platform
 gamemode                                               # daemon and library for game optimizations
