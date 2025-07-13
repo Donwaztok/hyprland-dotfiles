@@ -46,7 +46,7 @@ imagemagick                                            # for image processing
 libnotify                                              # for notifications
 
 # --------------------------------------------------- // Nvidia
-nvidia                                                 # nvidia driver
+nvidia-dkms                                            # nvidia driver
 
 # --------------------------------------------------- // Gaming
 steam                                                  # gaming platform
