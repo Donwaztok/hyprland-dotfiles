@@ -31,7 +31,6 @@ tooltip {
     border-radius: 12px;
     margin: 0px 2px 0px 0px;
     background: @wb-hvr-fg;
-    color: transparent;
     transition: all 0.4s ease;
 }
 
