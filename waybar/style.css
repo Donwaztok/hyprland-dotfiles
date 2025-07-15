@@ -32,6 +32,7 @@ tooltip {
     margin: 0px 2px 0px 0px;
     background: @wb-hvr-fg;
     transition: all 0.4s ease;
+    color: rgba(0, 0, 0, 0);
 }
 
 #workspaces button.active {
