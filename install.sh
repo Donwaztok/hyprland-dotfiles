@@ -61,6 +61,9 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 # mouse theme on X11
 echo "Xcursor.theme: Bibata-Modern-Classic" >> ~/.Xresources
 echo "Xcursor.size: 20" >> ~/.Xresources
+# mouse theme on icons
+echo "[Icon Theme]" >> ~/.icons/default/index.theme
+echo "Inherits=Bibata-Modern-Classic" >> ~/.icons/default/index.theme
 
 # install sddm theme
 if [ ! -d /etc/sddm.conf.d ]; then
