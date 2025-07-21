@@ -62,6 +62,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 echo "Xcursor.theme: Bibata-Modern-Classic" >> ~/.Xresources
 echo "Xcursor.size: 20" >> ~/.Xresources
 # mouse theme on icons
+mkdir -p ~/.icons/default
 echo "[Icon Theme]" >> ~/.icons/default/index.theme
 echo "Inherits=Bibata-Modern-Classic" >> ~/.icons/default/index.theme
 
