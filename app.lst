@@ -46,6 +46,7 @@ imagemagick                                            # for image processing
 libnotify                                              # for notifications
 
 # --------------------------------------------------- // Nvidia
+lib32-nvidia-utils                                     # nvidia utils for 32-bit applications
 nvidia-open                                            # nvidia driver
 
 # --------------------------------------------------- // Gaming
