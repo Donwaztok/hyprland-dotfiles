@@ -75,6 +75,11 @@ sudo touch /etc/sddm.conf.d/kde_settings.conf
 sudo cp /etc/sddm.conf.d/kde_settings.conf /etc/sddm.conf.d/kde_settings.t2.bkp
 sudo cp /usr/share/sddm/themes/Candy/kde_settings.conf /etc/sddm.conf.d/
 
+# custom desktop files
+mkdir -p ~/.local/share/applications
+cp hypr/source/vesktop.desktop ~/.local/share/applications/vesktop.desktop
+cp hypr/source/cursor-cursor.desktop ~/.local/share/applications/cursor-cursor.desktop
+
 # enable services
 sudo systemctl enable sddm
 sudo systemctl enable NetworkManager
