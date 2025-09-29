@@ -6,8 +6,11 @@
         "DP-3"
     ],
     "position": "top",
-    "mod": "dock",
+    "mode": "dock",
     "height": 24,
+    "margin-top": 3,
+    "margin-left": 3,
+    "margin-right": 3,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,

@@ -1,8 +1,6 @@
 @import "theme.css";
 
 * {
-    border: none;
-    border-radius: 0px;
     font-family: "FiraCode Nerd Font Mono";
     /* font-weight: bold; */
     font-size: 10px;
@@ -11,6 +9,8 @@
 
 window#waybar {
     background: @bar-bg;
+    border: none;
+    border-radius: 10px;
 }
 
 tooltip {
@@ -122,7 +122,7 @@ tooltip {
 #custom-expand,
 #custom-rr_end {
     color: @main-fg;
-    background: @bar-bg-2;
+    /* background: @bar-bg-2; */
     opacity: 1;
     margin: 3px 0px 3px 0px;
     padding-left: 6px;
