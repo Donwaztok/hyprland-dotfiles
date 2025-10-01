@@ -46,8 +46,8 @@ imagemagick                                            # for image processing
 libnotify                                              # for notifications
 
 # --------------------------------------------------- // Nvidia
-lib32-nvidia-utils                                     # nvidia utils for 32-bit applications
-nvidia-open                                            # nvidia driver
+#lib32-nvidia-utils                                    # nvidia utils for 32-bit applications
+#nvidia-open                                           # nvidia driver
 
 # --------------------------------------------------- // Gaming
 steam                                                  # gaming platform
@@ -68,7 +68,7 @@ kitty                                                  # terminal
 nautilus                                               # gnome file manager
 ark                                                    # kde file archiver
 vim                                                    # terminal text editor
-cursor-electron-latest                                 # ide text editor
+cursor-bin                                             # ide text editor
 spotify                                                # spotify
 thunderbird                                            # email
 vencord                                                # discord
@@ -90,5 +90,5 @@ noto-fonts-cjk                                         # Google Noto CJK fonts
 noto-fonts-emoji                                       # Google Noto emoji fonts
 noto-fonts-extra                                       # Google Noto TTF fonts - additional variants
 bibata-cursor-theme                                    # mouse cursor
-graphite-gtk-theme-black-rimless-normal-compact-git    # gtk theme
-tela-circle-icon-theme-black-git                       # icon theme
+#graphite-gtk-theme-black-rimless-normal-compact-git   # gtk theme
+#tela-circle-icon-theme-black-git                      # icon theme

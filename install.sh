@@ -84,4 +84,17 @@ cp hypr/source/cursor-cursor.desktop ~/.local/share/applications/cursor-cursor.d
 sudo systemctl enable sddm
 sudo systemctl enable NetworkManager
 
+# Install Theme
+git clone https://github.com/vinceliuice/Graphite-gtk-theme
+cd Graphite-gtk-theme/
+./install.sh -c dark -t yellow -l --tweaks normal rimless -s compacte
+cd ..
+rm -rf Graphite-gtk-theme/
+
+git clone https://github.com/vinceliuice/Tela-icon-theme
+cd Tela-icon-theme/
+./install.sh black
+cd ..
+rm Tela-icon-theme/
+
 echo "Instalação Concluída"
