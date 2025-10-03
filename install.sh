@@ -87,7 +87,7 @@ sudo systemctl enable NetworkManager
 # Install Theme
 git clone https://github.com/vinceliuice/Graphite-gtk-theme
 cd Graphite-gtk-theme/
-./install.sh -c dark -t yellow -l --tweaks normal rimless -s compacte
+./install.sh -c dark -t yellow -l --tweaks normal rimless -s compact
 cd ..
 rm -rf Graphite-gtk-theme/
 
@@ -95,6 +95,6 @@ git clone https://github.com/vinceliuice/Tela-icon-theme
 cd Tela-icon-theme/
 ./install.sh black
 cd ..
-rm Tela-icon-theme/
+rm -rf Tela-icon-theme/
 
 echo "Instalação Concluída"
