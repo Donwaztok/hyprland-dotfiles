@@ -17,31 +17,23 @@
     "reload_style_on_change": true,
     "modules-left": [
         "custom/padd",
-        "hyprland/workspaces",
-        "custom/padd"
+        "hyprland/workspaces"
     ],
     "modules-center": [
-        "custom/padd",
-        "custom/l_end",
-        "clock",
-        "custom/r_end",
-        "custom/padd"
+        "clock"
     ],
     "modules-right": [
-        "custom/padd",
-        "custom/l_end",
         "backlight",
         "pulseaudio",
-        "group/minimized",
         "battery",
-        "custom/r_end",
+        "group/minimized",
         "custom/padd"
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "active-only": false,
-        "format": "<span font='1' rise='-4444'>{}</span>",
+        "format": "<span font='1' rise='-4444'>{}</span>"
     },
     "clock": {
         "format": "{:%R}",
