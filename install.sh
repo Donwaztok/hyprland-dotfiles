@@ -78,7 +78,7 @@ sudo cp /usr/share/sddm/themes/Candy/kde_settings.conf /etc/sddm.conf.d/
 # custom desktop files
 mkdir -p ~/.local/share/applications
 cp hypr/source/vesktop.desktop ~/.local/share/applications/vesktop.desktop
-cp hypr/source/cursor-cursor.desktop ~/.local/share/applications/cursor-cursor.desktop
+cp hypr/source/cursor.desktop ~/.local/share/applications/cursor.desktop
 
 # enable services
 sudo systemctl enable sddm
