@@ -75,6 +75,13 @@ sudo touch /etc/sddm.conf.d/kde_settings.conf
 sudo cp /etc/sddm.conf.d/kde_settings.conf /etc/sddm.conf.d/kde_settings.t2.bkp
 sudo cp /usr/share/sddm/themes/Candy/kde_settings.conf /etc/sddm.conf.d/
 
+# install grub theme
+git clone https://github.com/yeyushengfan258/Particle-circle-grub-theme
+cd Particle-circle-grub-theme
+sudo ./install.sh -t window
+cd ..
+rm -rf Particle-circle-grub-theme/
+
 # custom desktop files
 mkdir -p ~/.local/share/applications
 cp hypr/source/vesktop.desktop ~/.local/share/applications/vesktop.desktop
