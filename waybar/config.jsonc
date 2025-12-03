@@ -3,7 +3,8 @@
     "layer": "top",
     "output": [
         "DP-2",
-        "DP-3"
+        "DP-3",
+        "HDMI-A-2"
     ],
     "position": "top",
     "mode": "dock",
