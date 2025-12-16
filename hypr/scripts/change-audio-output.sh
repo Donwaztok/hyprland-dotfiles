@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# Nomes dos dispositivos que você deseja alternar
-DEVICE_NAME_CREATIVE="Creative Stage SE"
-DEVICE_NAME_HYPERX="HyperX Cloud Stinger Core Wireless + 7.1"
-
-# Volumes padrão
-VOLUME_CREATIVE="60%"
-VOLUME_HYPERX="90%"
+# Configuração dos dispositivos
+declare -A DEVICES=(
+    ["CREATIVE"]="Creative Stage SE|60%"
+    ["HYPERX"]="HyperX Cloud Stinger Core Wireless + 7.1|90%"
+)
 
 # Função para obter ID de um dispositivo de saída pelo nome
 get_device_id_by_name() {
@@ -18,28 +16,49 @@ get_device_id_by_name() {
       | sed -E 's/[^0-9]*([0-9]+).*/\1/'
 }
 
-# Obter IDs dinamicamente
-DEVICE_CREATIVE=$(get_device_id_by_name "$DEVICE_NAME_CREATIVE")
-DEVICE_HYPERX=$(get_device_id_by_name "$DEVICE_NAME_HYPERX")
+# Obter IDs e informações dos dispositivos
+CREATIVE_INFO="${DEVICES[CREATIVE]}"
+HYPERX_INFO="${DEVICES[HYPERX]}"
+DEVICE_CREATIVE=$(get_device_id_by_name "${CREATIVE_INFO%%|*}")
+DEVICE_HYPERX=$(get_device_id_by_name "${HYPERX_INFO%%|*}")
+
+# Verificar se os dispositivos foram encontrados
+if [[ -z "$DEVICE_CREATIVE" ]]; then
+    notify-send "Erro: Dispositivo '${CREATIVE_INFO%%|*}' não encontrado!"
+    exit 1
+fi
+if [[ -z "$DEVICE_HYPERX" ]]; then
+    notify-send "Erro: Dispositivo '${HYPERX_INFO%%|*}' não encontrado!"
+    exit 1
+fi
 
 # Obter o dispositivo atual
-CURRENT_DEVICE=$(wpctl status | grep -A 2 "Sinks:" | grep '\*' | sed -E 's/[^0-9]*([0-9]+).*/\1/')
+CURRENT_DEVICE=$(wpctl status | awk '/Sinks:/{flag=1;next}/Sources:/{flag=0}flag' | grep '\*' | sed -E 's/[^0-9]*([0-9]+).*/\1/')
 
-# Lógica de alternância
-if [[ "$CURRENT_DEVICE" == "$DEVICE_CREATIVE" ]]; then
-    NEW_DEVICE="$DEVICE_HYPERX"
-    NEW_VOLUME="$VOLUME_HYPERX"
-    notify-send "$DEVICE_NAME_HYPERX | v $NEW_VOLUME"
-elif [[ "$CURRENT_DEVICE" == "$DEVICE_HYPERX" ]]; then
-    NEW_DEVICE="$DEVICE_CREATIVE"
-    NEW_VOLUME="$VOLUME_CREATIVE"
-    notify-send "$DEVICE_NAME_CREATIVE | v $NEW_VOLUME"
-else
-    # Caso o dispositivo atual não seja reconhecido, define o Creative como padrão
-    NEW_DEVICE="$DEVICE_CREATIVE"
-    NEW_VOLUME="$VOLUME_CREATIVE"
-    notify-send "Dispositivo atual não reconhecido. \nDefinindo saída para $DEVICE_NAME_CREATIVE como padrão..."
+# Se não conseguir detectar, usar o dispositivo padrão
+if [[ -z "$CURRENT_DEVICE" ]]; then
+    CURRENT_DEVICE=$(wpctl status | grep "Default sink:" | sed -E 's/.*\[([0-9]+)\].*/\1/')
 fi
+
+# Determinar qual dispositivo usar baseado no atual
+if [[ "$CURRENT_DEVICE" == "$DEVICE_CREATIVE" ]]; then
+    # Está no Creative, alternar para HyperX
+    NEW_DEVICE="$DEVICE_HYPERX"
+    NEW_NAME="${HYPERX_INFO%%|*}"
+    NEW_VOLUME="${HYPERX_INFO##*|}"
+else
+    # Está no HyperX ou não detectado, usar Creative
+    NEW_DEVICE="$DEVICE_CREATIVE"
+    NEW_NAME="${CREATIVE_INFO%%|*}"
+    NEW_VOLUME="${CREATIVE_INFO##*|}"
+fi
+
+# Se já está no dispositivo de destino, não fazer nada
+if [[ "$CURRENT_DEVICE" == "$NEW_DEVICE" ]]; then
+    exit 0
+fi
+
+notify-send "$NEW_NAME | v $NEW_VOLUME"
 
 # Alterar o dispositivo de saída padrão
 wpctl set-default "$NEW_DEVICE"
