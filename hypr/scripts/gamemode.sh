@@ -17,12 +17,12 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword decoration:inactive_opacity 1 ;\
         keyword decoration:fullscreen_opacity 1 ;\
         keyword decoration:fullscreen_opacity 1 ;\
-        keyword layerrule noanim,waybar ;\
-        keyword layerrule noanim,swaync-notification-window ;\
-        keyword layerrule noanim,swww-daemon ;\
-        keyword layerrule noanim,rofi
+        keyword layerrule no_anim on, match:namespace waybar ;\
+        keyword layerrule no_anim on, match:namespace swaync-notification-window ;\
+        keyword layerrule no_anim on, match:namespace swww-daemon ;\
+        keyword layerrule no_anim on, match:namespace rofi
         "
-        hyprctl 'keyword windowrule opaque,class:(.*)' # ensure all windows are opaque
+        hyprctl 'keyword windowrule opacity 1, match:class ^(.*)$' # ensure all windows are opaque
         exit
 else
         hyprctl reload config-only -q
