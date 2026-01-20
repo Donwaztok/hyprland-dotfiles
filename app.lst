@@ -70,6 +70,7 @@ thunderbird                                            # email
 vencord                                                # discord
 zapzap                                                 # whatsapp client
 solaar                                                 # logitech battery notifier
+eog                                                    # Image Viewer
 
 # --------------------------------------------------- // Shell
 zsh                                                    # zsh
